@@ -1,15 +1,17 @@
 <template>
   <div class="result">
     <div class="result-element" v-for="item in result" :key="item.id">
-      <div>
+      <div class="d-flex m-auto">
         {{ item.text }}
-        <div @click="deleteTitle(item.id)">x</div>
+        <div class="ml-3" @click="deleteTitle(item.id)"><CloseIcon /></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CloseIcon from "./Icons/CloseIcon.vue";
+
 export default {
   name: "App",
   props: {
@@ -20,7 +22,7 @@ export default {
       },
     },
   },
-  components: {},
+  components: { CloseIcon },
   methods: {
     deleteTitle(id) {
       this.$emit("deleteTitle", id);
@@ -31,24 +33,35 @@ export default {
 
 <style lang="scss" scoped>
 .result {
-  width: 60%;
-  margin: auto;
   display: flex;
+  width: 480px;
+  height: 48px;
+  overflow: auto;
+  flex-wrap: wrap;
+  margin: auto;
+  border: 1px solid #007bc3;
+  border-radius: 4px;
   .result-element {
-    width: 86px;
-    height: 24px;
+    width: 134px;
+    height: 32px;
     font-family: "Noto Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    color: #333333;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    background: #f8f8f8;
+    margin: 7px;
+    border-radius: 32px;
   }
+}
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dcdcdc;
 }
 </style>

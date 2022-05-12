@@ -8,7 +8,7 @@
           @submit="submitForm"
         />
       </div>
-      <div class="col-md-8 mt-5">
+      <div class="col-md-8 mt-2 ml-5">
         <Result :result="result" @deleteTitle="deleteProvince" />
       </div>
       <div class="col-md-8 mt-4"></div>
@@ -48,6 +48,18 @@ export default {
         {
           id: 6,
           text: "Nghệ An",
+        },
+        {
+          id: 7,
+          text: "Thái Bình",
+        },
+        {
+          id: 8,
+          text: "Hà Nam",
+        },
+        {
+          id: 9,
+          text: "Hưng Yên",
         },
       ],
       result: [],
