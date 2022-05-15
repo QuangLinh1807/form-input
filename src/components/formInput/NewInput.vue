@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import DownIcon from "./Icons/DownIcon.vue";
+import DownIcon from "../Icons/DownIcon.vue";
 export default {
-  name: "App",
+  name: "NewInput",
   props: {
     title: {
       type: String,
